@@ -3,24 +3,43 @@
 @{
     ViewData["Title"] = "Create";
 }
+<div class="container">
+<h1>Bokning</h1>
 
-<h1>Create</h1>
-
-<h4>Booking</h4>
+<h5>Boka service och upphämtning genom att fylla i formuläret nedan!</h5>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Car" class="control-label"></label>
                 <input asp-for="Car" class="form-control" />
                 <span asp-validation-for="Car" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <select asp-for="Car" class="form-control">
+                    <option selected>Välj bil</option>
+                    <option value="Volvo 240 - 1986 (ABC 321)">Volvo 240 - 1986 (ABC 321)</option>
+                    <option value="Audi A4 - 2011 (RKU 998)">Audi A4 - 2011 (RKU 998)</option>
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="Service" class="control-label"></label>
+                @* <label asp-for="Service" class="control-label"></label>
                 <input asp-for="Service" class="form-control" />
-                <span asp-validation-for="Service" class="text-danger"></span>
+                <span asp-validation-for="Service" class="text-danger"></span> *@
+                <select asp-for="Service" class="form-control">
+                    <option selected>Välj tjänst</option>
+                    <option value="Däckbyte">Däckbyte</option>
+                    <option value="Lagning av stenskott">Lagning av stenskott</option>
+                    <option value="Besiktning">Besiktning</option>
+                    <option value="Felsökning">Felsökning</option>
+                    <option value="Tvättning">Tvättning</option>
+                    <option value="Service, liten">Service, liten</option>
+                    <option value="Service, stor">Service, stor</option>
+                    <option value="Recond">Recond</option>
+                    <option value="Övriga tjänster">Övriga tjänster</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
@@ -33,9 +52,7 @@
                 <span asp-validation-for="OtherRequests" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <input asp-for="Address" id="autocomplete" placeholder="Adress för upphämtning/avlämning" onFocus="geolocate()" type="text" class="form-control form-color control-label">
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -45,9 +62,9 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Tillbaka till mina bokningar</a>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

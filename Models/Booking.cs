@@ -10,6 +10,7 @@ public class Booking
     [Display(Name = "Tjänst")]
     public string Service { get; set; }
     [Display(Name = "Datum och tid för upphämtning")]
+    [DisplayFormat(DataFormatString = "{0:dd MMM yyyy} {0:HH:mm}")]
     public DateTime Date { get; set; }
     [Display(Name = "Övriga önskemål")]
     public string OtherRequests { get; set; }
