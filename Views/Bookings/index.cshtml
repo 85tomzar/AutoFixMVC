@@ -48,7 +48,9 @@ else
             @Html.DisplayFor(modelItem => item.Date)
         </div>
         <div class="col-md-2">
-            @Html.DisplayFor(modelItem => item.OtherRequests)
+            @Html.DisplayFor(modelItem => item.ExtraCheckTires) @Html.DisplayNameFor(model => model.ExtraCheckTires)<br>
+            @Html.DisplayFor(modelItem => item.ExtraFillGas) @Html.DisplayNameFor(model => model.ExtraFillGas)<br>
+            @Html.DisplayFor(modelItem => item.ExtraWashing) @Html.DisplayNameFor(model => model.ExtraWashing)
         </div>
         <div class="col-md-3">
             <div class="mapouter">
@@ -59,7 +61,7 @@ else
         </div>
         <div class="col-md-1 test">
             <a asp-action="Edit" asp-route-id="@item.Id">Ändra</a>
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            @* <a asp-action="Details" asp-route-id="@item.Id">Details</a> *@
             <a asp-action="Delete" asp-route-id="@item.Id">Avboka</a>
         </div>
     </div>

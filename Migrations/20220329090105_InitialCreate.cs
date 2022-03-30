@@ -19,7 +19,10 @@ namespace AutoFix.Migrations
                     Service = table.Column<string>(type: "TEXT", nullable: true),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: false),
                     OtherRequests = table.Column<string>(type: "TEXT", nullable: true),
-                    Address = table.Column<string>(type: "TEXT", nullable: true)
+                    Address = table.Column<string>(type: "TEXT", nullable: true),
+                    ExtraWashing = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ExtraCheckTires = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ExtraFillGas = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

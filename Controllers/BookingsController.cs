@@ -53,7 +53,7 @@ namespace AutoFix.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Car,Service,Date,OtherRequests,Address")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,Car,Service,Date,OtherRequests,Address,ExtraWashing,ExtraCheckTires,ExtraFillGas")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace AutoFix.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Car,Service,Date,OtherRequests,Address")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Car,Service,Date,OtherRequests,Address,ExtraWashing,ExtraCheckTires,ExtraFillGas")] Booking booking)
         {
             if (id != booking.Id)
             {

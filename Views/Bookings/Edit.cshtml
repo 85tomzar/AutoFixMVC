@@ -28,10 +28,20 @@
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="OtherRequests" class="control-label"></label>
-                <input asp-for="OtherRequests" class="form-control" />
-                <span asp-validation-for="OtherRequests" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExtraCheckTires" /> @Html.DisplayNameFor(model => model.ExtraCheckTires)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExtraFillGas" /> @Html.DisplayNameFor(model => model.ExtraFillGas)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExtraWashing" /> @Html.DisplayNameFor(model => model.ExtraWashing)
+                </label>
             </div>
             <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
@@ -39,14 +49,14 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Spara" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Tillbaka till bokningar</a>
 </div>
 </div>
 @section Scripts {

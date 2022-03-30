@@ -12,11 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @* <div class="form-group">
-                <label asp-for="Car" class="control-label"></label>
-                <input asp-for="Car" class="form-control" />
-                <span asp-validation-for="Car" class="text-danger"></span>
-            </div> *@
+
             <div class="form-group">
                 <select asp-for="Car" class="form-control">
                     <option selected>Välj bil</option>
@@ -25,20 +21,16 @@
                 </select>
             </div>
             <div class="form-group">
-                @* <label asp-for="Service" class="control-label"></label>
-                <input asp-for="Service" class="form-control" />
-                <span asp-validation-for="Service" class="text-danger"></span> *@
+
                 <select asp-for="Service" class="form-control">
                     <option selected>Välj tjänst</option>
                     <option value="Däckbyte">Däckbyte</option>
                     <option value="Lagning av stenskott">Lagning av stenskott</option>
                     <option value="Besiktning">Besiktning</option>
                     <option value="Felsökning">Felsökning</option>
-                    <option value="Tvättning">Tvättning</option>
                     <option value="Service, liten">Service, liten</option>
                     <option value="Service, stor">Service, stor</option>
                     <option value="Recond">Recond</option>
-                    <option value="Övriga tjänster">Övriga tjänster</option>
                 </select>
             </div>
             <div class="form-group">
@@ -46,23 +38,38 @@
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="OtherRequests" class="control-label"></label>
-                <input asp-for="OtherRequests" class="form-control" />
-                <span asp-validation-for="OtherRequests" class="text-danger"></span>
+            <label asp-for="OtherRequests" class="control-label"></label>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExtraWashing" /> @Html.DisplayNameFor(model => model.ExtraWashing)
+                </label>
             </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExtraCheckTires" /> @Html.DisplayNameFor(model => model.ExtraCheckTires)
+                </label>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExtraFillGas" /> @Html.DisplayNameFor(model => model.ExtraFillGas)
+                </label>
+            </div>
+
+
             <div class="form-group">
                 <input asp-for="Address" id="autocomplete" placeholder="Adress för upphämtning/avlämning" onFocus="geolocate()" type="text" class="form-control form-color control-label">
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Boka" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Tillbaka till mina bokningar</a>
+    <a asp-action="Index">Tillbaka till bokningar</a>
 </div>
 </div>
 @section Scripts {

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoFix.Migrations
 {
     [DbContext(typeof(AutoFixContext))]
-    [Migration("20220322121233_InitialCreate")]
+    [Migration("20220329090105_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,15 @@ namespace AutoFix.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("ExtraCheckTires")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("ExtraFillGas")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("ExtraWashing")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("OtherRequests")
                         .HasColumnType("TEXT");

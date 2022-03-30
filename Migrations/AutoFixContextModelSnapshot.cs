@@ -31,6 +31,15 @@ namespace AutoFix.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("ExtraCheckTires")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("ExtraFillGas")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("ExtraWashing")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("OtherRequests")
                         .HasColumnType("TEXT");
 
